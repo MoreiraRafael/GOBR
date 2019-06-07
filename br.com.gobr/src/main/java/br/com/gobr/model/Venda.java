@@ -24,10 +24,10 @@ public class Venda {
 	
 	// Aqui, os objetos Cliente e Funcionário compõem uma venda
 	@ManyToOne
-	private Cliente idCliente;
+	private Cliente cliente; // Obs.: Como é usado uma InheritanceType.JOINED, o nome do atributo do id do cliente será idPessoa 
 	
 	@ManyToOne
-	private Funcionario idFuncionario;
+	private Funcionario funcionario; // Obs.: O comentário da linha 27 serve para o funcionario
 	
 	// Aqui vai gerar minha tabela HistoricoVenda
 	@ManyToMany(targetEntity = Produto.class, fetch = FetchType.LAZY)
@@ -37,12 +37,12 @@ public class Venda {
 		)
 	private List produtos;
 
-	public Cliente getIdCliente() {
-		return idCliente;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setIdCliente(Cliente idCliente) {
-		this.idCliente = idCliente;
+	public void setIdCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public List getProdutos() {
@@ -69,11 +69,11 @@ public class Venda {
 		this.dataVenda = dataVenda;
 	}
 
-	public Funcionario getIdFuncionario() {
-		return idFuncionario;
+	public Funcionario getFuncionario() {
+		return funcionario;
 	}
 
-	public void setIdFuncionario(Funcionario idFuncionario) {
-		this.idFuncionario = idFuncionario;
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
 }

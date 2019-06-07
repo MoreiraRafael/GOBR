@@ -23,10 +23,10 @@ public class Pessoa {
 
 	@OneToOne
 	// @JoinColumn(name = "idEndereco", nullable = false)
-	private Endereco idEndereco;
+	private Endereco endereco;
 	
 	@ManyToOne
-	private Genero idGenero;
+	private Genero genero;
 
 	public Integer getIdPessoa() {
 		return idPessoa;
@@ -61,19 +61,19 @@ public class Pessoa {
 	}
 
 	public Endereco getIdEndereco() {
-		return idEndereco;
+		return endereco;
 	}
 
-	public void setIdEndereco(Endereco idEndereco) {
-		this.idEndereco = idEndereco;
+	public void setIdEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 	public Genero getIdGenero() {
-		return idGenero;
+		return genero;
 	}
 
-	public void setIdGenero(Genero idGenero) {
-		this.idGenero = idGenero;
+	public void setIdGenero(Genero genero) {
+		this.genero = genero;
 	}
 
 }

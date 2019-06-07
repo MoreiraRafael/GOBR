@@ -5,9 +5,11 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
+@PrimaryKeyJoinColumn(name = "idPessoa")
 @Table(name = "funcionario")
 public class Funcionario extends Pessoa {
 
@@ -15,6 +17,8 @@ public class Funcionario extends Pessoa {
 	private LocalDate dataDemissao;
 	private String funcao;
 	private double salario;
+	private String nomeusuario;
+	private String senha;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "idPessoa")
 	private Collection<Venda> listaVenda;
@@ -57,5 +61,21 @@ public class Funcionario extends Pessoa {
 
 	public void setSalario(double salario) {
 		this.salario = salario;
+	}
+
+	public String getNomeusuario() {
+		return nomeusuario;
+	}
+
+	public void setNomeusuario(String nomeusuario) {
+		this.nomeusuario = nomeusuario;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 }
