@@ -4,10 +4,10 @@ import javax.persistence.EntityManager;
 
 import br.com.gobr.model.Genero;
 
-public class GeneroDAO {
+public class GeneroJPA {
 	private EntityManager em = null;
 	
-	public GeneroDAO() {
+	public GeneroJPA() {
 		DAO dao = new DAO();
 		em = dao.getEntity();
 	}
