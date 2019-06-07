@@ -38,7 +38,7 @@ public class VendaJPA {
 	public void delete(Venda v) {
 		em.getTransaction().begin();
 		Venda vendRemover = getById(v.getIdVenda());
-		em.remove(vendRemover);
+		em.remove(vendRemoverw);
 		em.getTransaction().commit();
 	}
 }
