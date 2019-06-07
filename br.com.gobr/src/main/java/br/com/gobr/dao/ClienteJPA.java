@@ -1,13 +1,12 @@
 package br.com.gobr.dao;
 
 import javax.persistence.EntityManager;
-import org.hibernate.mapping.List;
 import br.com.gobr.model.Cliente;
 
-public class PessoaJPA {
+public class ClienteJPA {
 	private EntityManager em;
 	
-	public PessoaJPA() {
+	public ClienteJPA() {
 		DAO dao = new DAO();
 		em = dao.getEntity();
 	}
@@ -38,10 +37,4 @@ public class PessoaJPA {
 		em.remove(clienteRemover);
 		em.getTransaction().commit();
 	}
-	
-	// Consulta
-	public List<Cliente> getAll(){
-		return em.createQuery("FROM" + Cliente.class.getName()).getResultList();
-	}
-	
 }

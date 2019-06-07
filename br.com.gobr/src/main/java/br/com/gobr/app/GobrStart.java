@@ -16,5 +16,7 @@ public class GobrStart {
         Conexao conn = new Conexao();
         
         conn.getEntity();
+        
+        System.out.println("Hello, world!");
     }
 }

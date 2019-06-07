@@ -2,7 +2,6 @@ package br.com.gobr.model;
 
 import java.time.LocalDate;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -27,10 +26,10 @@ public class Compra{
 	private Funcionario idFuncionario;
 
 	// Aqui vai gerar a tabela HistoricoCompra
-	@ManyToMany(targetEntity = Produto.class, fetch = FetchType.LAZY)
+	@ManyToMany
 	@JoinTable(name = "HistoricoCompra", 
-		joinColumns = @JoinColumn(name = "idCompra"), 
-		inverseJoinColumns = @JoinColumn(name = "idProduto")
+		joinColumns = {@JoinColumn(name = "idCompra")}, 
+		inverseJoinColumns = {@JoinColumn(name = "idProduto")}
 		)
 	private List produtos;
 	
