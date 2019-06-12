@@ -2,7 +2,6 @@ package br.com.gobr.dao;
 
 import javax.persistence.EntityManager;
 
-import br.com.gobr.model.Compra;
 import br.com.gobr.model.Venda;
 
 public class VendaJPA {

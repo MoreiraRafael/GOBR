@@ -1,14 +1,12 @@
 package br.com.gobr.model;
 
-import java.util.ArrayList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.mapping.List;
+
 
 @Entity
 @Table(name = "produto")
@@ -26,11 +24,12 @@ public class Produto{
     private float quantMin;
     private float quantMax;
     
-    @ManyToMany(mappedBy = "prodVenda")
-    private List venda;
+    //@ManyToMany(mappedBy = "prodVenda")
+    //private List<Venda> venda;
     
-    @ManyToMany(mappedBy = "prodCompra")
-    private List compra;
+    
+    @ManyToOne
+	private Compra compra;
 
     public Integer getIdProduto() {
         return idProduto;

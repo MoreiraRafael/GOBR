@@ -2,43 +2,41 @@ package br.com.gobr.dao;
 
 import javax.persistence.EntityManager;
 
-import br.com.gobr.model.Compra;
-import br.com.gobr.model.Venda;
+import br.com.gobr.model.Produto;
 
-public class VendaJPA {
+public class ProdutoJPA {
 	private EntityManager em = null;
 
-	public VendaJPA() {
+	public ProdutoJPA() {
 		DAO dao = new DAO();
 		em = dao.getEntity();
 	}
-
 	// Fazer os métodos CRUD a partir daqui
 
 	// Procurar por ID
-	public Venda getById(final int id) {
-		return em.find(Venda.class, id);
+	public Produto getById(final int id) {
+		return em.find(Produto.class, id);
 	}
-	
+
 	// Salvar
-	public void save(Venda v) {
+	public void save(Produto p) {
 		em.getTransaction().begin();
-		em.persist(v);
+		em.persist(p);
 		em.getTransaction().commit();
 	}
 
 	// Atualizar
-	public void update(Venda v) {
+	public void update(Produto p) {
 		em.getTransaction().begin();
-		em.merge(v);
+		em.merge(p);
 		em.getTransaction().commit();
 	}
 
 	// Remover
-	public void delete(Venda v) {
+	public void delete(Produto p) {
 		em.getTransaction().begin();
-		Venda vendRemover = getById(v.getIdVenda());
-		em.remove(vendRemover);
+		Produto prodRemover = getById(p.getIdProduto());
+		em.remove(prodRemover);
 		em.getTransaction().commit();
 	}
 }

@@ -2,43 +2,42 @@ package br.com.gobr.dao;
 
 import javax.persistence.EntityManager;
 
-import br.com.gobr.model.Compra;
-import br.com.gobr.model.Venda;
+import br.com.gobr.model.Endereco;
 
-public class VendaJPA {
+public class EnderecoJPA {
 	private EntityManager em = null;
-
-	public VendaJPA() {
+	
+	public EnderecoJPA() {
 		DAO dao = new DAO();
 		em = dao.getEntity();
 	}
-
+	
 	// Fazer os métodos CRUD a partir daqui
 
 	// Procurar por ID
-	public Venda getById(final int id) {
-		return em.find(Venda.class, id);
+	public Endereco getById(final int id) {
+		return em.find(Endereco.class, id);
 	}
-	
+
 	// Salvar
-	public void save(Venda v) {
+	public void save(Endereco e) {
 		em.getTransaction().begin();
-		em.persist(v);
+		em.persist(e);
 		em.getTransaction().commit();
 	}
 
 	// Atualizar
-	public void update(Venda v) {
+	public void update(Endereco e) {
 		em.getTransaction().begin();
-		em.merge(v);
+		em.merge(e);
 		em.getTransaction().commit();
 	}
 
 	// Remover
-	public void delete(Venda v) {
+	public void delete(Endereco e) {
 		em.getTransaction().begin();
-		Venda vendRemover = getById(v.getIdVenda());
-		em.remove(vendRemover);
+		Endereco endRemover = getById(e.getIdEndereco());
+		em.remove(endRemover);
 		em.getTransaction().commit();
 	}
 }

@@ -1,6 +1,8 @@
 package br.com.gobr.model;
 
 import java.time.LocalDate;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import antlr.collections.List;
+
 
 @Entity
 @Table(name = "compra")
@@ -32,7 +34,8 @@ public class Compra{
 		joinColumns = @JoinColumn(name = "idCompra"), 
 		inverseJoinColumns = @JoinColumn(name = "idProduto")
 		)
-	private List produtos;
+	private List<Produto> produtos;
+	
 	
 	public List getProdutos() {
 		return produtos;

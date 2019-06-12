@@ -3,6 +3,7 @@ package br.com.gobr.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name = "venda")
@@ -27,11 +31,12 @@ public class Venda {
 	private Cliente cliente; // Obs.: Como é usado uma InheritanceType.JOINED, o nome do atributo do id do
 								// cliente será idPessoa
 
-	@ManyToOne
+	@OneToOne
 	private Funcionario funcionario; // Obs.: O comentário da linha 27 serve para o funcionario
 
 	// Aqui vai gerar minha tabela HistoricoVenda
 	@ManyToMany(targetEntity = Produto.class, fetch = FetchType.LAZY)
+	
 	@JoinTable(name = "HistoricoVenda", joinColumns = @JoinColumn(name = "idVenda"), inverseJoinColumns = @JoinColumn(name = "idProduto"))
 	private List<Produto> produtos;
 
