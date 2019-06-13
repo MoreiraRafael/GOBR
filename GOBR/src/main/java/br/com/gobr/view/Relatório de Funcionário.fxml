@@ -36,19 +36,17 @@
       <TextField disable="true" layoutX="556.0" layoutY="191.0" prefHeight="25.0" prefWidth="177.0" />
       <TextField disable="true" layoutX="395.0" layoutY="191.0" />
       <TextField disable="true" layoutX="14.0" layoutY="240.0" />
-      <Label layoutX="16.0" layoutY="223.0" text="Usuário:" />
+      <Label layoutX="16.0" layoutY="223.0" text="Nome de Usuário:" />
       <Label layoutX="175.0" layoutY="223.0" text="Senha:" />
       <Label layoutX="399.0" layoutY="173.0" text="Data de Admissão:" />
       <Label layoutX="556.0" layoutY="173.0" text="Data de Demissão:" />
       <TableView layoutX="16.0" layoutY="275.0" prefHeight="291.0" prefWidth="716.0">
         <columns>
-          <TableColumn prefWidth="100.0" text="C1" />
-          <TableColumn prefWidth="71.0" text="C2" />
-            <TableColumn prefWidth="119.0" text="Column X" />
-            <TableColumn prefWidth="124.0" text="Column X" />
-            <TableColumn prefWidth="78.0" text="Column X" />
-            <TableColumn prefWidth="100.0" text="Column X" />
-            <TableColumn prefWidth="123.0" text="Column X" />
+          <TableColumn prefWidth="335.0" text="Nome" />
+          <TableColumn prefWidth="113.0" text="CPF" />
+            <TableColumn prefWidth="93.0" text="Função" />
+            <TableColumn prefWidth="106.0" text="Nome de Usuário" />
+            <TableColumn prefWidth="68.0" text="Senha" />
         </columns>
       </TableView>
    </children>

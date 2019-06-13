@@ -30,13 +30,10 @@
       <Button id="btnSalvar" disable="true" layoutX="499.0" layoutY="425.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" text="Salvar" />
       <TableView fixedCellSize="1.0" layoutX="16.0" layoutY="228.0" prefHeight="187.0" prefWidth="570.0">
         <columns>
-          <TableColumn prefWidth="84.0" text="C1" />
-          <TableColumn prefWidth="76.0" text="C2" />
-            <TableColumn prefWidth="89.0" text="Column X" />
-            <TableColumn prefWidth="73.0" text="Column X" />
-            <TableColumn prefWidth="82.0" text="Column X" />
-            <TableColumn prefWidth="81.0" text="Column X" />
-            <TableColumn prefWidth="84.0" text="Column X" />
+          <TableColumn prefWidth="123.0" text="Nome" />
+          <TableColumn prefWidth="184.0" text="CPF" />
+            <TableColumn prefWidth="141.0" text="Rua" />
+            <TableColumn prefWidth="121.0" text="Bairro" />
         </columns>
       </TableView>
    </children>
