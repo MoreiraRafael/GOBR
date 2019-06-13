@@ -24,10 +24,6 @@ public class Produto{
     private float quantMin;
     private float quantMax;
     
-    //@ManyToMany(mappedBy = "prodVenda")
-    //private List<Venda> venda;
-    
-    
     @ManyToOne
 	private Compra compra;
 

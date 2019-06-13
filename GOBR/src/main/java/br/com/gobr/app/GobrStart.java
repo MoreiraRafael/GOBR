@@ -8,6 +8,7 @@ import br.com.gobr.jpa.Conexao;
 public class GobrStart {
 
 	// private static Logger LOG = Logger.getLogger(GobrStart.class);
+	@SuppressWarnings("unused")
 	private static final Logger logger = LogManager.getLogger(GobrStart.class);
 
 	public static void main(String[] args) {
@@ -15,5 +16,6 @@ public class GobrStart {
 		// LOG.info("Iniciando conexão");
 		Conexao conn = new Conexao();
 		conn.getEntity();
+
 	}
 }

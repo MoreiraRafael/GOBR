@@ -1,10 +1,7 @@
 package br.com.gobr.model;
 
 import java.time.LocalDate;
-import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
