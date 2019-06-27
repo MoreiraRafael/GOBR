@@ -2,7 +2,6 @@ package br.com.gobr.app;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,8 +25,10 @@ public class GobrStart extends Application {
 	@Override
 	public void start(Stage args) throws Exception {
 		// TODO Auto-generated method stub
-		Parent root = FXMLLoader.load(getClass().getResource("../view/Login.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("../view/ui_login.fxml"));
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());
+		args.setTitle("Login - GOBR");
 		args.setScene(scene);
 		args.show();
 	}

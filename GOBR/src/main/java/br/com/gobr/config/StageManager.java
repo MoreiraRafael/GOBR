@@ -18,8 +18,8 @@ public class StageManager {
 
 	// Trocar cena
 	public void switchScene(final FxmlView view) {
-		//Parent viewRootNodeHierarchy = loadViewNodeHierarchy(view.getFxmlFile());
-		//show(viewRootNodeHierarchy, view.getTitle());
+		// Parent viewRootNodeHierarchy = loadViewNodeHierarchy(view.getFxmlFile());
+		// show(viewRootNodeHierarchy, view.getTitle());
 	}
 
 	//

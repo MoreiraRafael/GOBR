@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="148.0" prefWidth="420.0" styleClass="img-alerta-dados-salvos" stylesheets="@../../../../../resources/css/estilo.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.gobr.controller.AlertaDadosSalvosController">
+   <children>
+      <Button fx:id="btnOK" layoutX="258.0" layoutY="74.0" mnemonicParsing="false" onAction="#retornar" prefHeight="25.0" prefWidth="67.0" stylesheets="@../../../../../resources/css/estilo.css" text="OK!" />
+      <Label layoutX="223.0" layoutY="39.0" text="Dados cadastrados com sucesso" />
+      <ImageView fitHeight="181.0" fitWidth="310.0" layoutX="-110.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" styleClass="img-alerta-dados-salvos">
+         <image>
+            <Image url="@../../../../../resources/img/main_photo.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

@@ -24,7 +24,7 @@ public class Pessoa {
 	// @JoinColumn(name = "idEndereco", nullable = false)
 	private Endereco endereco;
 	
-	private char genero;
+	private String genero;
 
 	public Integer getIdPessoa() {
 		return idPessoa;
@@ -66,12 +66,12 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 
-	public char getIdGenero() {
+	public String getIdGenero() {
 		return genero;
 	}
 
-	public void setIdGenero(char genero) {
-		this.genero = genero;
+	public void setIdGenero(String string) {
+		this.genero = string;
 	}
 
 }

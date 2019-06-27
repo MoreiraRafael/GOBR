@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.gobr.controller.RelacaoClienteController">
+   <children>
+      <TableView fx:id="tableCliente" layoutX="10.0" layoutY="48.0" prefHeight="374.0" prefWidth="757.0">
+        <columns>
+          <TableColumn fx:id="colID" prefWidth="35.0" text="ID" />
+          <TableColumn fx:id="colNome" prefWidth="350.0" text="Nome" />
+            <TableColumn fx:id="colCPF" prefWidth="176.0" text="CPF" />
+            <TableColumn fx:id="colRG" prefWidth="195.0" text="RG" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnVoltar" layoutX="662.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" stylesheets="@../../../../../resources/css/estilo.css" text="Voltar" />
+   </children>
+</AnchorPane>

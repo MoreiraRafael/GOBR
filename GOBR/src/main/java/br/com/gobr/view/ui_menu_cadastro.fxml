@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="702.0" stylesheets="@../../../../../resources/css/estilo.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.gobr.controller.CadastroController">
+   <top>
+      <Label text="Menu de Cadastro" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Italic" size="22.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <TabPane prefHeight="406.0" prefWidth="702.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab id="tabTitle" text="Cliente">
+            <content>
+              <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="702.0">
+                     <children>
+                        <ImageView fitHeight="450.0" fitWidth="343.0" layoutX="-32.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true" styleClass="img-cadastro">
+                           <image>
+                              <Image url="@../../../../../resources/img/photo_cadastro.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnNovoCliente" layoutX="588.0" layoutY="14.0" mnemonicParsing="false" onAction="#ativarCamposCliente" text="Novo" />
+                        <Button fx:id="btnVoltarCliente" layoutX="479.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarCliente" text="Voltar" />
+                        <Label layoutX="323.0" layoutY="49.0" text="Nome Completo" />
+                        <Label layoutX="323.0" layoutY="100.0" text="CPF" />
+                        <TextField fx:id="txtNomeCliente" disable="true" layoutX="323.0" layoutY="66.0" prefHeight="25.0" prefWidth="365.0" />
+                        <TextField fx:id="txtCpfCliente" disable="true" layoutX="323.0" layoutY="117.0" prefHeight="25.0" prefWidth="105.0" />
+                        <Button fx:id="btnRelacaoCliente" layoutX="323.0" layoutY="14.0" mnemonicParsing="false" onAction="#abrirRelacaoCliente" text="Relação de Clientes" />
+                        <TextField fx:id="txtRuaCliente" disable="true" layoutX="323.0" layoutY="174.0" prefHeight="25.0" prefWidth="363.0" />
+                        <TextField fx:id="txtBairroCliente" disable="true" layoutX="323.0" layoutY="222.0" prefHeight="25.0" prefWidth="109.0" />
+                        <TextField fx:id="txtCidadeCliente" disable="true" layoutX="445.0" layoutY="222.0" prefHeight="25.0" prefWidth="108.0" />
+                        <TextField fx:id="txtEstadoCliente" disable="true" layoutX="566.0" layoutY="222.0" prefHeight="25.0" prefWidth="120.0" />
+                        <Button fx:id="btnSalvarCliente" disable="true" layoutX="588.0" layoutY="390.0" mnemonicParsing="false" onAction="#salvarCliente" text="Salvar" />
+                        <TextField fx:id="txtRgCliente" disable="true" layoutX="442.0" layoutY="117.0" prefHeight="25.0" prefWidth="103.0" />
+                        <Label layoutX="442.0" layoutY="100.0" text="RG" />
+                        <Label layoutX="554.0" layoutY="100.0" text="Genero" />
+                        <ChoiceBox fx:id="cboxGeneroCliente" disable="true" layoutX="553.0" layoutY="117.0" prefHeight="25.0" prefWidth="133.0" />
+                        <Label layoutX="323.0" layoutY="157.0" text="Rua" />
+                        <Label layoutX="327.0" layoutY="205.0" text="Bairro" />
+                        <Label layoutX="444.0" layoutY="205.0" text="Cidade" />
+                        <Label layoutX="565.0" layoutY="205.0" text="Estado" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab id="tabTitle" text="Funcionario">
+               <content>
+                  <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="702.0">
+                     <children>
+                        <ImageView fitHeight="462.0" fitWidth="342.0" layoutX="-23.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" styleClass="img-funcionario">
+                           <image>
+                              <Image url="@../../../../../resources/img/photo_funcionario.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnNovoFuncionario" layoutX="588.0" layoutY="14.0" mnemonicParsing="false" onAction="#ativarCamposFuncionario" text="Novo" />
+                        <Button fx:id="btnVoltarFuncionario" layoutX="479.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarFuncionario" text="Voltar" />
+                        <Label layoutX="323.0" layoutY="49.0" text="Nome Completo" />
+                        <Label layoutX="323.0" layoutY="100.0" text="CPF" />
+                        <TextField fx:id="txtNomeFuncionario" disable="true" layoutX="323.0" layoutY="66.0" prefHeight="25.0" prefWidth="365.0" />
+                        <TextField fx:id="txtCpfFuncionario" disable="true" layoutX="323.0" layoutY="117.0" prefHeight="25.0" prefWidth="105.0" />
+                        <Button fx:id="btnRelacaoFuncionario" layoutX="323.0" layoutY="14.0" mnemonicParsing="false" onAction="#abrirRelacaoFuncionario" text="Relação de Funcionarios" />
+                        <TextField fx:id="txtRuaFuncionario" disable="true" layoutX="324.0" layoutY="168.0" prefHeight="25.0" prefWidth="363.0" />
+                        <TextField fx:id="txtBairroFuncionario" disable="true" layoutX="326.0" layoutY="215.0" prefHeight="25.0" prefWidth="104.0" />
+                        <TextField fx:id="txtCidadeFuncionario" disable="true" layoutX="443.0" layoutY="215.0" prefHeight="25.0" prefWidth="108.0" />
+                        <TextField fx:id="txtEstadoFuncionario" disable="true" layoutX="560.0" layoutY="215.0" prefHeight="25.0" prefWidth="125.0" />
+                        <Button fx:id="btnSalvarFuncionario" disable="true" layoutX="588.0" layoutY="390.0" mnemonicParsing="false" onAction="#salvarFuncionario" text="Salvar" />
+                        <TextField fx:id="txtRgFuncionario" disable="true" layoutX="442.0" layoutY="117.0" prefHeight="25.0" prefWidth="103.0" />
+                        <Label layoutX="442.0" layoutY="100.0" text="RG" />
+                        <Label layoutX="554.0" layoutY="100.0" text="Genero" />
+                        <ChoiceBox fx:id="txtGeneroFuncionario" disable="true" layoutX="553.0" layoutY="117.0" prefHeight="25.0" prefWidth="133.0" />
+                        <Label layoutX="323.0" layoutY="151.0" text="Rua" />
+                        <Label layoutX="328.0" layoutY="197.0" text="Bairro" />
+                        <Label layoutX="443.0" layoutY="197.0" text="Cidade" />
+                        <Label layoutX="561.0" layoutY="197.0" text="Estado" />
+                        <Label layoutX="325.0" layoutY="246.0" text="Função" />
+                        <Label layoutX="460.0" layoutY="246.0" text="Salário" />
+                        <TextField fx:id="txtFuncaoFuncionario" disable="true" layoutX="325.0" layoutY="263.0" prefHeight="25.0" prefWidth="120.0" />
+                        <TextField fx:id="txtSalarioFuncionario" disable="true" layoutX="458.0" layoutY="263.0" prefHeight="25.0" prefWidth="120.0" />
+                        <TextField fx:id="txtUsuarioFuncionario" disable="true" layoutX="325.0" layoutY="303.0" prefHeight="25.0" prefWidth="120.0" />
+                        <Label layoutX="324.0" layoutY="288.0" text="Usuário" />
+                        <Label layoutX="462.0" layoutY="288.0" text="Senha" />
+                        <PasswordField fx:id="txtSenhaFuncionario" disable="true" layoutX="457.0" layoutY="303.0" prefHeight="25.0" prefWidth="119.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="tabTitle" text="Produto">
+               <content>
+                  <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="370.0" prefWidth="702.0">
+                     <children>
+                        <ImageView fitHeight="547.0" fitWidth="380.0" layoutY="-59.0" pickOnBounds="true" preserveRatio="true" styleClass="img-funcionario">
+                           <image>
+                              <Image url="@../../../../../resources/img/photo_produto.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnNovoProduto" layoutX="588.0" layoutY="14.0" mnemonicParsing="false" onAction="#ativarCamposProduto" text="Novo" />
+                        <Button fx:id="btnVoltarProduto" layoutX="479.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarProduto" text="Voltar" />
+                        <Label layoutX="323.0" layoutY="49.0" text="Cod.Barras" />
+                        <Label layoutX="395.0" layoutY="49.0" text="Descriçao" />
+                        <TextField fx:id="txtCodBarras" disable="true" layoutX="323.0" layoutY="66.0" prefHeight="25.0" prefWidth="62.0" />
+                        <TextField fx:id="txtDescricao" disable="true" layoutX="393.0" layoutY="66.0" prefHeight="25.0" prefWidth="295.0" />
+                        <Button fx:id="btnRelacaoProduto" layoutX="323.0" layoutY="14.0" mnemonicParsing="false" onAction="#abrirRelacaoProduto" text="Relação de Produtos" />
+                        <TextField fx:id="txtQtdEst" disable="true" layoutX="430.0" layoutY="117.0" prefHeight="25.0" prefWidth="85.0" />
+                        <TextField fx:id="txtQtdMin" disable="true" layoutX="519.0" layoutY="117.0" prefHeight="25.0" prefWidth="82.0" />
+                        <TextField fx:id="txtQtdMax" disable="true" layoutX="605.0" layoutY="117.0" prefHeight="25.0" prefWidth="83.0" />
+                        <TextField fx:id="txtValorVarejo" disable="true" layoutX="325.0" layoutY="168.0" prefHeight="25.0" prefWidth="120.0" />
+                        <Button fx:id="btnSalvarProduto" disable="true" layoutX="588.0" layoutY="390.0" mnemonicParsing="false" onAction="#salvarProduto" text="Salvar" />
+                        <TextField fx:id="txtMarca" disable="true" layoutX="323.0" layoutY="117.0" prefHeight="25.0" prefWidth="103.0" />
+                        <Label layoutX="323.0" layoutY="100.0" text="Marca" />
+                        <Label layoutX="430.0" layoutY="100.0" text="Qtd.Est" />
+                        <Label layoutX="519.0" layoutY="100.0" text="Qtd.Min" />
+                        <Label layoutX="609.0" layoutY="100.0" text="Qtd.Max" />
+                        <Label layoutX="324.0" layoutY="153.0" text="Valor Varejo" />
+                        <TextField fx:id="txtValorAtacado" disable="true" layoutX="459.0" layoutY="168.0" prefHeight="25.0" prefWidth="120.0" />
+                        <Label layoutX="459.0" layoutY="153.0" text="Valor Atacado" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

@@ -1,5 +1,7 @@
 package br.com.gobr.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import br.com.gobr.model.Funcionario;
 
@@ -18,6 +20,11 @@ public class FuncionarioJPA {
 	public Funcionario getById(final int id) {
 		return em.find(Funcionario.class, id);
 	}
+
+	// Procurar por nome
+	/*public List<Funcionario> getByName(String name) {
+		
+	}*/
 
 	// Salvar
 	public void save(Funcionario f) {
@@ -39,6 +46,6 @@ public class FuncionarioJPA {
 		Funcionario funcRemover = getById(f.getIdPessoa());
 		em.remove(funcRemover);
 		em.getTransaction().commit();
-		
+
 	}
 }

@@ -1,6 +1,10 @@
 package br.com.gobr.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import br.com.gobr.model.Cliente;
 
 public class ClienteJPA {
@@ -14,6 +18,16 @@ public class ClienteJPA {
 	// Busca cliente por id no banco de dados
 	public Cliente getById(final int id) {
 		return em.find(Cliente.class, id);
+	}
+	
+	public List<Cliente> getByName(String nome) {
+		em.getTransaction().begin();
+		Query q = (Query) em.createNamedQuery("Cliente.findByName");
+		q.setParameter("nome", nome);
+		List result = q.getResultList();
+		em.getTransaction().commit();
+		em.close();
+		return result;
 	}
 	
 	// Salvar cliente no banco de dados
