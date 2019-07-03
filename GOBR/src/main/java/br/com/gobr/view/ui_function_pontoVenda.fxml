@@ -4,38 +4,35 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="555.0" prefWidth="782.0" stylesheets="@../../../../../resources/css/estilo.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="555.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.gobr.controller.PdvController">
    <children>
-      <Button id="btnIniciarVenda" fx:id="btnIniciarVenda" layoutX="443.0" layoutY="14.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="92.0" text="Iniciar Venda" AnchorPane.leftAnchor="443.0" AnchorPane.topAnchor="14.0" />
-      <Button id="btnCancelarVenda" disable="true" layoutX="549.0" layoutY="14.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="99.0" text="Cancelar Venda" />
-      <Button id="btnConsultarProduto" layoutX="655.0" layoutY="14.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="113.0" text="Consultar Produto" />
+      <Button id="btnIniciarVenda" fx:id="btnIniciarVenda" layoutX="443.0" layoutY="14.0" mnemonicParsing="false" onAction="#iniciarVenda" prefHeight="45.0" prefWidth="92.0" text="Iniciar Venda" AnchorPane.leftAnchor="443.0" AnchorPane.topAnchor="14.0" />
+      <Button id="btnCancelarVenda" fx:id="btnCancelarVenda" disable="true" layoutX="549.0" layoutY="14.0" mnemonicParsing="false" onAction="#cancelaVenda" prefHeight="45.0" prefWidth="99.0" text="Cancelar Venda" />
+      <Button id="btnConsultarProduto" fx:id="btnConsultaProduto" layoutX="655.0" layoutY="14.0" mnemonicParsing="false" onAction="#buscaProduto" prefHeight="45.0" prefWidth="113.0" text="Consultar Produto" />
       <TextField id="txtCodigo" fx:id="txtAdd" disable="true" layoutX="14.0" layoutY="14.0" prefHeight="45.0" prefWidth="315.0" />
       <Button id="btnAdd" fx:id="btnAdd" disable="true" layoutX="335.0" layoutY="14.0" mnemonicParsing="false" onAction="#addTable" prefHeight="45.0" prefWidth="53.0" text="Add" />
-      <TextField id="txtID" disable="true" layoutX="14.0" layoutY="130.0" prefHeight="25.0" prefWidth="37.0" />
+      <TextField id="txtID" fx:id="txtIdCliente" disable="true" layoutX="14.0" layoutY="130.0" prefHeight="25.0" prefWidth="37.0" />
       <Label layoutX="15.0" layoutY="113.0" text="ID do Cliente:" />
-      <Label layoutX="15.0" layoutY="175.0" text="Observações:" />
-      <TextArea disable="true" layoutX="15.0" layoutY="192.0" prefHeight="255.0" prefWidth="315.0" />
-      <TextField id="txtNomeCliente" disable="true" layoutX="54.0" layoutY="130.0" prefHeight="25.0" prefWidth="272.0" />
-      <Button id="btnFinalizarVenda" disable="true" layoutX="344.0" layoutY="472.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="145.0" text="Finalizar Venda">
+      <TextField id="txtNomeCliente" fx:id="txtNomeCliente" disable="true" layoutX="54.0" layoutY="130.0" prefHeight="25.0" prefWidth="272.0" />
+      <Button id="btnFinalizarVenda" fx:id="btnFinalizarVenda" disable="true" layoutX="344.0" layoutY="472.0" mnemonicParsing="false" onAction="#encerrarVenda" prefHeight="45.0" prefWidth="145.0" text="Finalizar Venda">
          <font>
             <Font size="16.0" />
          </font></Button>
       <Label layoutX="208.0" layoutY="78.0" text="ID da Venda:" />
-      <TextField id="txtID" disable="true" layoutX="276.0" layoutY="74.0" prefHeight="25.0" prefWidth="53.0" />
-      <TableView layoutX="344.0" layoutY="74.0" prefHeight="375.0" prefWidth="424.0">
+      <TextField id="txtID" fx:id="txtIdVenda" disable="true" layoutX="276.0" layoutY="74.0" prefHeight="25.0" prefWidth="53.0" />
+      <TableView fx:id="tableListaProduto" layoutX="344.0" layoutY="74.0" prefHeight="375.0" prefWidth="424.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Nº" />
-          <TableColumn prefWidth="244.0" text="Descrição" />
-            <TableColumn prefWidth="40.0" text="Qtde." />
-            <TableColumn prefWidth="64.0" text="Total" />
+          <TableColumn fx:id="colNumItem" prefWidth="75.0" text="Nº" />
+          <TableColumn fx:id="colDescricao" prefWidth="244.0" text="Descrição" />
+            <TableColumn fx:id="colQtde" prefWidth="40.0" text="Qtde." />
+            <TableColumn fx:id="colTotal" prefWidth="64.0" text="Total" />
         </columns>
       </TableView>
-      <TextField disable="true" layoutX="632.0" layoutY="467.0" prefHeight="55.0" prefWidth="136.0">
+      <TextField fx:id="txtValorGeral" disable="true" layoutX="632.0" layoutY="467.0" prefHeight="55.0" prefWidth="136.0">
          <font>
             <Font size="20.0" />
          </font>
@@ -45,7 +42,7 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="480.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="113.0" text="Sair do PDV" wrapText="true">
+      <Button fx:id="btnSair" layoutX="14.0" layoutY="480.0" mnemonicParsing="false" onAction="#sair" prefHeight="55.0" prefWidth="113.0" text="Sair do PDV" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>

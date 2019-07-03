@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-
 import br.com.gobr.model.Cliente;
 
 public class ClienteJPA {
@@ -13,6 +12,15 @@ public class ClienteJPA {
 	public ClienteJPA() {
 		DAO dao = new DAO();
 		em = dao.getEntity();
+	}
+	
+	public List<Cliente> getAll(){
+		em.getTransaction().begin();
+		@SuppressWarnings("unchecked")
+		List<Cliente> clientes =
+				 em.createQuery("FROM " + Cliente.class.getName()).getResultList();
+		System.out.println(clientes);
+		return clientes;
 	}
 	
 	// Busca cliente por id no banco de dados
@@ -29,7 +37,7 @@ public class ClienteJPA {
 		em.close();
 		return result;
 	}
-	
+
 	// Salvar cliente no banco de dados
 	public void save(Cliente c) {
 		em.getTransaction().begin();

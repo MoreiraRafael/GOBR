@@ -20,9 +20,9 @@ public class Produto{
     private Float valorAtacado;
     private String codBarras;
     private String marca;
-    private float quantEstoque;
-    private float quantMin;
-    private float quantMax;
+    private Float quantEstoque;
+    private Float quantMin;
+    private Float quantMax;
     
     @ManyToOne
 	private Compra compra;

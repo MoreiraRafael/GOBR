@@ -37,7 +37,7 @@ public class MainController {
 
     @FXML
     void abrirMenuCadastro(ActionEvent event) throws IOException {
-    	Stage stage = (Stage) btnADC.getScene().getWindow();
+    	Stage stage = (Stage) btnCadastro.getScene().getWindow();
     	Parent root = FXMLLoader.load(getClass().getResource("../view/ui_menu_cadastro.fxml"));
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());
@@ -48,7 +48,7 @@ public class MainController {
 
     @FXML
     void abrirPDV(ActionEvent event) throws IOException {
-    	Stage stage = (Stage) btnADC.getScene().getWindow();
+    	Stage stage = (Stage) btnPDV.getScene().getWindow();
     	Parent root = FXMLLoader.load(getClass().getResource("../view/ui_function_pontoVenda.fxml"));
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());

@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "pessoa")
 public class Pessoa {
 
@@ -73,5 +73,12 @@ public class Pessoa {
 	public void setIdGenero(String string) {
 		this.genero = string;
 	}
+/*
+	@Override
+	public String toString() {
+		return getIdEndereco().getRua();
+	}
+	*/
+	
 
 }

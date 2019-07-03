@@ -3,6 +3,8 @@ package br.com.gobr.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+
+import br.com.gobr.model.Cliente;
 import br.com.gobr.model.Funcionario;
 
 public class FuncionarioJPA {
@@ -25,6 +27,14 @@ public class FuncionarioJPA {
 	/*public List<Funcionario> getByName(String name) {
 		
 	}*/
+	
+	public List<Funcionario> getAll(){
+		em.getTransaction().begin();
+		@SuppressWarnings("unchecked")
+		List<Funcionario> funcionarios =
+				 em.createQuery("FROM " + Funcionario.class.getName()).getResultList();
+		return funcionarios;
+	}
 
 	// Salvar
 	public void save(Funcionario f) {

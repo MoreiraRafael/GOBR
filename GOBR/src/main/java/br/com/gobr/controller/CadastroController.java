@@ -364,13 +364,25 @@ public class CadastroController {
 
 	// Métodos para abrir tela de tabela dos dados cadastrados
 	@FXML
-	void abrirRelacaoCliente(ActionEvent event) {
-		
+	void abrirRelacaoCliente(ActionEvent event) throws IOException {
+		Stage stage = (Stage) btnRelacaoCliente.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("../view/ui_tabela_cliente.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());
+		stage.setTitle("Listagem de Clientes");
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	@FXML
-	void abrirRelacaoFuncionario(ActionEvent event) {
-
+	void abrirRelacaoFuncionario(ActionEvent event) throws IOException {
+		Stage stage = (Stage) btnRelacaoFuncionario.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("../view/ui_tabela_funcionario.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());
+		stage.setTitle("Listagem de Clientes");
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	@FXML
@@ -411,5 +423,4 @@ public class CadastroController {
 		stage.setScene(scene);
 		stage.show();
 	}
-
 }

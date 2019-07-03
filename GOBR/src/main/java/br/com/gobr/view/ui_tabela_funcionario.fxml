@@ -5,17 +5,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="776.0" stylesheets="@../../../../../resources/css/estilo.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.gobr.controller.RelacaoClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="776.0" stylesheets="@../../../../../resources/css/estilo.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.gobr.controller.RelacaoFuncionarioController">
    <children>
       <TableView fx:id="tableCliente" layoutX="10.0" layoutY="48.0" prefHeight="374.0" prefWidth="757.0">
         <columns>
           <TableColumn fx:id="colNome" prefWidth="159.0" text="Nome" />
             <TableColumn fx:id="colCPF" prefWidth="125.0" text="CPF" />
             <TableColumn fx:id="colRG" prefWidth="84.0" text="RG" />
-            <TableColumn fx:id="colRua" prefWidth="92.0" text="Rua" />
-            <TableColumn fx:id="colBairro" prefWidth="84.0" text="Bairro" />
-            <TableColumn fx:id="colCidade" prefWidth="97.0" text="Cidade" />
-            <TableColumn fx:id="colEstado" prefWidth="115.0" text="Estado" />
+            <TableColumn fx:id="colFuncao" prefWidth="92.0" text="Função" />
+            <TableColumn fx:id="colSalario" prefWidth="84.0" text="Salário" />
+            <TableColumn fx:id="colUsuario" prefWidth="97.0" text="Usuário" />
+            <TableColumn fx:id="colSenha" prefWidth="115.0" text="Senha" />
         </columns>
       </TableView>
       <Button fx:id="btnVoltar" layoutX="662.0" layoutY="14.0" mnemonicParsing="false" onAction="#retornar" prefHeight="25.0" prefWidth="77.0" stylesheets="@../../../../../resources/css/estilo.css" text="Voltar" />
