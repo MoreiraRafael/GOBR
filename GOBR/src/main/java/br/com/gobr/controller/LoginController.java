@@ -2,6 +2,8 @@ package br.com.gobr.controller;
 
 import java.io.IOException;
 
+import br.com.gobr.dao.FuncionarioJPA;
+import br.com.gobr.model.Funcionario;
 //import br.com.gobr.dao.FuncionarioJPA;
 //import br.com.gobr.model.Funcionario;
 import javafx.event.ActionEvent;
@@ -28,6 +30,9 @@ public class LoginController {
 	@FXML
 	private PasswordField txtSenha;
 
+	//Funcionario f = new Funcionario();
+	//FuncionarioJPA fjpa = new FuncionarioJPA();
+	
 	@FXML
     void login(ActionEvent event) throws IOException {
 		if(txtLogin.getText().equals("admin") && txtSenha.getText().equals("admin")) {
@@ -39,10 +44,5 @@ public class LoginController {
     		stage.setScene(scene);
     		stage.show();
     	}
-    	/*
-    	Funcionario f = new Funcionario();
-    	FuncionarioJPA fjpa = new FuncionarioJPA();
-    	*/
-    	
     }
 }

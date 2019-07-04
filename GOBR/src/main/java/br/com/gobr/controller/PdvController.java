@@ -1,12 +1,18 @@
 package br.com.gobr.controller;
 
+import java.io.IOException;
+
 import br.com.gobr.model.Produto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class PdvController {
 
@@ -64,13 +70,24 @@ public class PdvController {
     }
 
     @FXML
-    void buscaProduto(ActionEvent event) {
-
+    void buscaProduto(ActionEvent event) throws IOException {
+    	Stage stage = (Stage) btnConsultaProduto.getScene().getWindow();
+    	Parent root = FXMLLoader.load(getClass().getResource("../view/ui_pdv_buscaProduto.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());
+		stage.setTitle("Consulta de Produtos");
+		stage.setScene(scene);
+		stage.show();
     }
 
     @FXML
     void cancelaVenda(ActionEvent event) {
-
+    	btnCancelarVenda.setDisable(true);
+    	btnFinalizarVenda.setDisable(true);
+    	btnAdd.setDisable(true);
+    	txtAdd.setDisable(true);
+    	txtIdCliente.setDisable(true);
+    	tableListaProduto.setDisable(true);
     }
 
     @FXML
@@ -80,12 +97,23 @@ public class PdvController {
 
     @FXML
     void iniciarVenda(ActionEvent event) {
-
+    	btnCancelarVenda.setDisable(false);
+    	btnFinalizarVenda.setDisable(false);
+    	btnAdd.setDisable(false);
+    	txtAdd.setDisable(false);
+    	txtIdCliente.setDisable(false);
+    	tableListaProduto.setDisable(false);
     }
 
     @FXML
-    void sair(ActionEvent event) {
-
+    void sair(ActionEvent event) throws IOException {
+    	Stage stage = (Stage) btnSair.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("../view/ui_main.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());
+		stage.setTitle("GOBR - Tela Principal");
+		stage.setScene(scene);
+		stage.show();
     }
 
 }

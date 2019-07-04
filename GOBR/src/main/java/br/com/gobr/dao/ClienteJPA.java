@@ -1,7 +1,6 @@
 package br.com.gobr.dao;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import br.com.gobr.model.Cliente;

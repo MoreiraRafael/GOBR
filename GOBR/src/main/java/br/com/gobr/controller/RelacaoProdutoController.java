@@ -3,15 +3,14 @@ package br.com.gobr.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import br.com.gobr.dao.ProdutoJPA;
-import br.com.gobr.model.Cliente;
 import br.com.gobr.model.Produto;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -20,7 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-public class RelacaoProdutoController {
+public class RelacaoProdutoController implements Initializable{
 
     @FXML
     private TableView<Produto> tableCliente;
@@ -68,10 +67,9 @@ public class RelacaoProdutoController {
 		colQtdMax.setCellValueFactory(new PropertyValueFactory<Float, Produto>("quantMax"));
 		colValorVarejo.setCellValueFactory(new PropertyValueFactory<Float, Produto>("valorVarejo"));
 		colValorAtacado.setCellValueFactory(new PropertyValueFactory<Float, Produto>("valorAtacado"));
-		
 
 		ProdutoJPA pjpa = new ProdutoJPA();
-		ObservableList<Produto> listacliente = FXCollections.observableArrayList(cjpa.getAll());
+		ObservableList<Produto> listacliente = FXCollections.observableArrayList(pjpa.getAll());
 		tableCliente.setItems(listacliente);
 	}
 

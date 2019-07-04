@@ -386,8 +386,14 @@ public class CadastroController {
 	}
 
 	@FXML
-	void abrirRelacaoProduto(ActionEvent event) {
-
+	void abrirRelacaoProduto(ActionEvent event) throws IOException {
+		Stage stage = (Stage) btnRelacaoProduto.getScene().getWindow();
+		Parent root = FXMLLoader.load(getClass().getResource("../view/ui_tabela_produto.fxml"));
+		Scene scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());
+		stage.setTitle("Listagem de Produtos");
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	// Métodos para voltar para a tela principal
