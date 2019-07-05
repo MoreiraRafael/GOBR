@@ -49,8 +49,6 @@ public class LoginController {
 			msg.setContentText("Nome do Usuario ou Senha Incorretos! ");
 			msg.setHeaderText("Erro na Autenticação ");
 			msg.show();
-
 		}
-
 	}
 }
