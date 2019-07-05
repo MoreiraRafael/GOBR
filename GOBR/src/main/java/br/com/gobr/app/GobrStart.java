@@ -25,7 +25,7 @@ public class GobrStart extends Application {
 	@Override
 	public void start(Stage args) throws Exception {
 		// TODO Auto-generated method stub
-		Parent root = FXMLLoader.load(getClass().getResource("../view/ui_main.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("../view/ui_login.fxml"));
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("/css/estilo.css").toExternalForm());
 		args.setTitle("Login");
